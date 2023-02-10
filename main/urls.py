@@ -1,0 +1,33 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.std_login, name='std_login'),
+    path('my/', views.myCourses, name='myCourses'),
+    path('facultyCourses/', views.facultyCourses, name='facultyCourses'),
+    path('login/', views.std_login, name='std_login'),
+    path('logout/', views.std_logout, name='std_logout'),
+    path('my/<str:code>/', views.course_page, name='course'),
+    path('profile/<str:id>/', views.profile, name='profile'),
+    path('facultyProfile/<str:id>/', views.profile, name='profile_faculty'),
+    path('faculty/<str:code>/', views.course_page_faculty, name='faculty'),
+    path('addAnnouncement/<str:code>/',
+         views.addAnnouncement, name='addAnnouncement'),
+    path('announecement/<str:code>/<int:id>/',
+         views.deleteAnnouncement, name='deleteAnnouncement'),
+    path('edit/<str:code>/<int:id>/',views.editAnnouncement, name='editAnnouncement'),
+    path('update/<str:code>/<int:id>/',views.updateAnnouncement, name='updateAnnouncement'),
+    path('addAssignment/<str:code>/', views.addAssignment, name='addAssignment'),
+    path('assignment/<str:code>/<int:id>/',views.assignmentPage, name='assignmentPage'),
+    path('assignments/<str:code>/', views.allAssignments, name='allAssignments'),
+    path('student-assignments/<str:code>/', views.allAssignmentsSTD, name='student-assignments'),
+    path('addSubmission/<str:code>/<int:id>/',views.addSubmission, name='addSubmission'),
+     path('submission/<str:code>/<int:id>/',views.viewSubmission, name='submission'),
+     path('gradeSubmission/<str:code>/<int:id>/<int:sub_id>',views.gradeSubmission, name='gradeSubmission'),
+     path('course-material/<str:code>/',views.addCourseMaterial, name='addCourseMaterial'),
+     path('course-material/<str:code>/<int:id>/',views.deleteCourseMaterial, name='deleteCourseMaterial'),
+     path('courses/',views.courses, name='courses'),
+     path('access/<str:code>/',views.access, name='access'),
+     path('search/',views.search, name='search'),
+     path('error/',views.error, name='error'),
+]

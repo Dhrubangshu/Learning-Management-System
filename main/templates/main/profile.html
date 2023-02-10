@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% block title %}{{student.name}} | eLMS{% endblock title %}
+{% block profile %}
+{% url 'profile' student.student_id %}
+{% endblock %}
+{% block user %}
+{{student.name}}
+{% endblock user %}
+{% block courses %}
+{% url 'myCourses' %}
+{% endblock courses %}
+{% block allCourses %}
+{% url 'courses' %}
+{% endblock %}
+{% block content %}
+<!--navigation links-->
+<div class="container shadow-sm">
+   <nav aria-label="breadcrumb">
+      <ol class="breadcrumb p-3">
+         <li class="breadcrumb-item active" aria-current="page">Profile</li>
+      </ol>
+   </nav>
+</div>
+<div class="container shadow">
+   <div class="row">
+      <div class="col-12">
+         <div class="h4 my-3 text-secondary d-flex justify-content-center shadow-sm">
+            <p>Student info</p>
+         </div>
+      </div>
+   </div>
+   <div class="d-flex flex-column align-items-center">
+      <div class="my-3">
+         <img src="/media/{{student.photo}}" alt="image" style="height: 10rem ; width:10rem">
+      </div>
+      <div class="my-3">
+         <h4>Name : {{student.name}}</h4>
+         <h5>Roll No: <span class="mx-3 px-1"></span>{{student.student_id}}</h5>
+         <h5>Dept :<span class="mx-2"> {{student.department}}</h5>
+         <h5>Semester: <span class="mx-2">{{student.semester}}</h5>
+         <h5>Email:<span class="mx-2">{{student.email}}</h5>
+         <h5>Phone No. :<span class="mx-2">{{student.phone_no}}</h5>
+         <h5>Permanent Address:<span class="mx-2">{{student.permanent_address}}</h5>
+         <h5>Current Address:<span class="mx-2">{{student.current_address}}</h5>
+      </div>
+   </div>
+</div>
+{% endblock %}
