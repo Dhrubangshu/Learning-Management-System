@@ -1,5 +1,5 @@
 
-# E-Learning Management System
+# Learning Management System
 
 ### Project Overview
 
@@ -9,6 +9,8 @@ Currently implemented features:
 - **Teacher** Can view course content, post announcement and course content, create assignments, and grade assignments.
 
     Each course has discussion channels for both students and teachers.
+
+ To see demonstration of the LMS click [here](https://drive.google.com/file/d/1HgQVSSd3J6BSY4LGmIxUaAUMG44ND6Sh/view?usp=sharing).
 
 ### Tech Stack
 Django 4.0.4
